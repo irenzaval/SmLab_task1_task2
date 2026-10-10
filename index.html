@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sportmaster — интернет-магазин спортивной одежды, обуви и инвентаря. Оформление заказа онлайн.">
+    <meta name="keywords" content="спорт, магазин, кроссовки, одежда, инвентарь, Sportmaster">
+    <title>Sportmaster — интернет-магазин спортивных товаров</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <div class="container page-header__inner">
+            <a href="#" class="logo" aria-label="Sportmaster — на главную">
+                <span class="logo__text">SM</span>
+            </a>
+            <div class="site-branding">
+                <h1 class="site-title">Sportmaster</h1>
+                <p class="site-slogan">Спортивная одежда, обувь и инвентарь</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Главное меню">
+        <div class="container">
+            <ul class="main-nav__list">
+                <li class="main-nav__item"><a class="main-nav__link" href="#">Обувь</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#">Одежда</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#">Инвентарь</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container layout">
+
+        <main class="main-content">
+
+            <section class="block block--links" aria-labelledby="links-title">
+                <h2 class="block__title" id="links-title">Популярные категории</h2>
+                <ul class="link-list">
+                    <li class="link-list__item"><a class="link-list__link" href="#">Кроссовки для бега</a></li>
+                    <li class="link-list__item"><a class="link-list__link" href="#">Спортивные костюмы</a></li>
+                    <li class="link-list__item"><a class="link-list__link" href="#">Велотренажёры</a></li>
+                    <li class="link-list__item"><a class="link-list__link" href="#">Фитнес-аксессуары</a></li>
+                </ul>
+            </section>
+
+            <section class="block block--table" aria-labelledby="table-title">
+                <h2 class="block__title" id="table-title">Хиты продаж</h2>
+                <table class="data-table">
+                    <caption class="visually-hidden">Список самых популярных товаров магазина</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Товар</th>
+                            <th scope="col">Бренд</th>
+                            <th scope="col">Цена, ₽</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Кроссовки беговые</td>
+                            <td>Nike</td>
+                            <td>8 990</td>
+                        </tr>
+                        <tr>
+                            <td>Спортивный костюм</td>
+                            <td>Adidas</td>
+                            <td>6 490</td>
+                        </tr>
+                        <tr>
+                            <td>Велотренажёр домашний</td>
+                            <td>Sportmaster</td>
+                            <td>24 900</td>
+                        </tr>
+                        <tr>
+                            <td>Гантели разборные, 2×10 кг</td>
+                            <td>Torres</td>
+                            <td>3 200</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="block block--form" aria-labelledby="form-title">
+                <h2 class="block__title" id="form-title">Оформление заказа</h2>
+                <form class="form" action="#" method="post">
+
+                    <div class="form__field">
+                        <label class="form__label" for="input-name">Ваше имя:</label>
+                        <input class="form__input" type="text" id="input-name" name="input-name" placeholder="Иван Иванов" required>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="input-email">Email для связи:</label>
+                        <input class="form__input" type="email" id="input-email" name="input-email" placeholder="example@mail.ru" required>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="input-date">Дата доставки:</label>
+                        <input class="form__input" type="date" id="input-date" name="input-date" value="2024-06-01">
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="input-comment">Комментарий к заказу:</label>
+                        <textarea class="form__input form__input--textarea" id="input-comment" name="input-comment" rows="3" placeholder="Пожелания по доставке">Позвонить за час до доставки</textarea>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="select-delivery">Способ доставки:</label>
+                        <select class="form__input form__input--select" id="select-delivery" name="select-delivery">
+                            <option value="courier">Курьером по Москве</option>
+                            <option value="pickup" selected>Самовывоз из магазина</option>
+                            <option value="post">Почтой России</option>
+                        </select>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="select-sizes">Выберите размер (можно несколько):</label>
+                        <select class="form__input form__input--select" id="select-sizes" name="select-sizes" multiple size="4">
+                            <option value="s">S</option>
+                            <option value="m" selected>M</option>
+                            <option value="l" selected>L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="form__fieldset">
+                        <legend class="form__legend">Способ оплаты:</legend>
+                        <div class="form__radio-group">
+                            <label class="form__radio-label">
+                                <input class="form__radio" type="radio" name="payment" value="card" checked>
+                                Банковской картой
+                            </label>
+                            <label class="form__radio-label">
+                                <input class="form__radio" type="radio" name="payment" value="cash">
+                                Наличными при получении
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form__field form__field--checkbox">
+                        <label class="form__checkbox-label">
+                            <input class="form__checkbox" type="checkbox" name="agreement" checked>
+                            Я согласен с правилами обработки персональных данных
+                        </label>
+                    </div>
+
+                    <button class="form__submit" type="submit">Оформить заказ</button>
+                </form>
+            </section>
+
+        </main>
+
+        <aside class="sidebar" aria-label="Акции и предложения">
+            <section class="block">
+                <h2 class="block__title">Акции и скидки</h2>
+                <ul class="link-list">
+                    <li class="link-list__item"><a class="link-list__link" href="#">−30% на беговые кроссовки</a></li>
+                    <li class="link-list__item"><a class="link-list__link" href="#">2 по цене 1 на футболки</a></li>
+                    <li class="link-list__item"><a class="link-list__link" href="#">Бесплатная доставка от 3 000 ₽</a></li>
+                    <li class="link-list__item"><a class="link-list__link" href="#">Подарок к первому заказу</a></li>
+                </ul>
+            </section>
+
+            <section class="block sidebar__contacts">
+                <h2 class="block__title">Контакты</h2>
+                <p class="sidebar__text">Горячая линия: <strong>8 800 555-35-35</strong></p>
+                <p class="sidebar__text">Ежедневно с 9:00 до 21:00</p>
+            </section>
+        </aside>
+
+    </div>
+
+    <footer class="page-footer">
+        <div class="container page-footer__inner">
+            <p class="page-footer__text">© Ирина Завалей, 2026. Учебный проект.</p>
+            <p class="page-footer__text">Sportmaster — все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
