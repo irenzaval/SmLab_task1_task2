@@ -1,184 +1,355 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sportmaster — интернет-магазин спортивной одежды, обуви и инвентаря. Оформление заказа онлайн.">
-    <meta name="keywords" content="спорт, магазин, кроссовки, одежда, инвентарь, Sportmaster">
-    <title>Sportmaster — интернет-магазин спортивных товаров</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Учебный проект по веб-разработке: все виды гиперссылок HTML5 и форма регистрации студента.">
+  <meta name="keywords" content="HTML5, гиперссылки, формы, веб-разработка, КубГУ">
+  <title>Учебный проект — гиперссылки и HTML-форма</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="page-header">
-        <div class="container page-header__inner">
-            <a href="#" class="logo" aria-label="Sportmaster — на главную">
-                <span class="logo__text">SM</span>
-            </a>
-            <div class="site-branding">
-                <h1 class="site-title">Sportmaster</h1>
-                <p class="site-slogan">Спортивная одежда, обувь и инвентарь</p>
-            </div>
-        </div>
-    </header>
-
-    <nav class="main-nav" aria-label="Главное меню">
-        <div class="container">
-            <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Обувь</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Одежда</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Инвентарь</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container layout">
-
-        <main class="main-content">
-
-            <section class="block block--links" aria-labelledby="links-title">
-                <h2 class="block__title" id="links-title">Популярные категории</h2>
-                <ul class="link-list">
-                    <li class="link-list__item"><a class="link-list__link" href="#">Кроссовки для бега</a></li>
-                    <li class="link-list__item"><a class="link-list__link" href="#">Спортивные костюмы</a></li>
-                    <li class="link-list__item"><a class="link-list__link" href="#">Велотренажёры</a></li>
-                    <li class="link-list__item"><a class="link-list__link" href="#">Фитнес-аксессуары</a></li>
-                </ul>
-            </section>
-
-            <section class="block block--table" aria-labelledby="table-title">
-                <h2 class="block__title" id="table-title">Хиты продаж</h2>
-                <table class="data-table">
-                    <caption class="visually-hidden">Список самых популярных товаров магазина</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Товар</th>
-                            <th scope="col">Бренд</th>
-                            <th scope="col">Цена, ₽</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Кроссовки беговые</td>
-                            <td>Nike</td>
-                            <td>8 990</td>
-                        </tr>
-                        <tr>
-                            <td>Спортивный костюм</td>
-                            <td>Adidas</td>
-                            <td>6 490</td>
-                        </tr>
-                        <tr>
-                            <td>Велотренажёр домашний</td>
-                            <td>Sportmaster</td>
-                            <td>24 900</td>
-                        </tr>
-                        <tr>
-                            <td>Гантели разборные, 2×10 кг</td>
-                            <td>Torres</td>
-                            <td>3 200</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="block block--form" aria-labelledby="form-title">
-                <h2 class="block__title" id="form-title">Оформление заказа</h2>
-                <form class="form" action="#" method="post">
-
-                    <div class="form__field">
-                        <label class="form__label" for="input-name">Ваше имя:</label>
-                        <input class="form__input" type="text" id="input-name" name="input-name" placeholder="Иван Иванов" required>
-                    </div>
-
-                    <div class="form__field">
-                        <label class="form__label" for="input-email">Email для связи:</label>
-                        <input class="form__input" type="email" id="input-email" name="input-email" placeholder="example@mail.ru" required>
-                    </div>
-
-                    <div class="form__field">
-                        <label class="form__label" for="input-date">Дата доставки:</label>
-                        <input class="form__input" type="date" id="input-date" name="input-date" value="2024-06-01">
-                    </div>
-
-                    <div class="form__field">
-                        <label class="form__label" for="input-comment">Комментарий к заказу:</label>
-                        <textarea class="form__input form__input--textarea" id="input-comment" name="input-comment" rows="3" placeholder="Пожелания по доставке">Позвонить за час до доставки</textarea>
-                    </div>
-
-                    <div class="form__field">
-                        <label class="form__label" for="select-delivery">Способ доставки:</label>
-                        <select class="form__input form__input--select" id="select-delivery" name="select-delivery">
-                            <option value="courier">Курьером по Москве</option>
-                            <option value="pickup" selected>Самовывоз из магазина</option>
-                            <option value="post">Почтой России</option>
-                        </select>
-                    </div>
-
-                    <div class="form__field">
-                        <label class="form__label" for="select-sizes">Выберите размер (можно несколько):</label>
-                        <select class="form__input form__input--select" id="select-sizes" name="select-sizes" multiple size="4">
-                            <option value="s">S</option>
-                            <option value="m" selected>M</option>
-                            <option value="l" selected>L</option>
-                            <option value="xl">XL</option>
-                        </select>
-                    </div>
-
-                    <fieldset class="form__fieldset">
-                        <legend class="form__legend">Способ оплаты:</legend>
-                        <div class="form__radio-group">
-                            <label class="form__radio-label">
-                                <input class="form__radio" type="radio" name="payment" value="card" checked>
-                                Банковской картой
-                            </label>
-                            <label class="form__radio-label">
-                                <input class="form__radio" type="radio" name="payment" value="cash">
-                                Наличными при получении
-                            </label>
-                        </div>
-                    </fieldset>
-
-                    <div class="form__field form__field--checkbox">
-                        <label class="form__checkbox-label">
-                            <input class="form__checkbox" type="checkbox" name="agreement" checked>
-                            Я согласен с правилами обработки персональных данных
-                        </label>
-                    </div>
-
-                    <button class="form__submit" type="submit">Оформить заказ</button>
-                </form>
-            </section>
-
-        </main>
-
-        <aside class="sidebar" aria-label="Акции и предложения">
-            <section class="block">
-                <h2 class="block__title">Акции и скидки</h2>
-                <ul class="link-list">
-                    <li class="link-list__item"><a class="link-list__link" href="#">−30% на беговые кроссовки</a></li>
-                    <li class="link-list__item"><a class="link-list__link" href="#">2 по цене 1 на футболки</a></li>
-                    <li class="link-list__item"><a class="link-list__link" href="#">Бесплатная доставка от 3 000 ₽</a></li>
-                    <li class="link-list__item"><a class="link-list__link" href="#">Подарок к первому заказу</a></li>
-                </ul>
-            </section>
-
-            <section class="block sidebar__contacts">
-                <h2 class="block__title">Контакты</h2>
-                <p class="sidebar__text">Горячая линия: <strong>8 800 555-35-35</strong></p>
-                <p class="sidebar__text">Ежедневно с 9:00 до 21:00</p>
-            </section>
-        </aside>
-
+  <header class="page-header">
+    <div class="container page-header__inner">
+      <a href="#" class="logo" aria-label="Учебный проект — на главную">
+        <img class="logo__img" src="images/logo.webp" alt="Project" width="44" height="44">
+        <span class="logo__text">Учебный проект</span>
+      </a>
+      <div class="site-branding">
+        <p class="site-slogan">Веб-разработка и веб-сервисы · КубГУ</p>
+      </div>
+      <a href="#form" class="header-link" aria-label="Перейти к форме">
+        <span class="header-link__label">Анкета</span>
+        <span class="header-link__text">Заполнить</span>
+      </a>
     </div>
+  </header>
 
-    <footer class="page-footer">
-        <div class="container page-footer__inner">
-            <p class="page-footer__text">© Ирина Завалей, 2026. Учебный проект.</p>
-            <p class="page-footer__text">Sportmaster — все права защищены.</p>
+  <nav class="main-nav" aria-label="Главное меню">
+    <div class="container">
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link" href="#links">Гиперссылки</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#table">Таблица</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#form">Анкета</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#map">Карта</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Все виды гиперссылок HTML5</h1>
+      <p class="page-hero__subtitle">21 тип ссылок, форма регистрации студента и таблица успеваемости</p>
+    </div>
+  </div>
+
+  <div class="container layout">
+
+    <main class="main-content">
+
+      <section class="block" id="links" aria-labelledby="links-title">
+        <h2 class="block__title" id="links-title">Маркированный список гиперссылок</h2>
+        <ul class="link-list link-list--refs">
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="http://kubsu.ru/">1. Абсолютная гиперссылка на главную КубГУ</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="https://kubsu.ru/">2. Абсолютная гиперссылка на главную КубГУ (https)</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="https://kubsu.ru/">
+              3.
+                <img class="link-list__img" src="images/kubsu.jpeg"
+                    alt="Логотип КубГУ — переход на официальный сайт" width="1000" height="1000">
+            </a>
+        </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="/about">4. Сокращённая ссылка на внутреннюю страницу /about</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="/">5. Сокращённая ссылка на главную страницу</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="#form">6. Ссылка на фрагмент текущей страницы (к форме)</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="http://kubsu.ru/?param1=one&amp;param2=two&amp;param3=three">
+              7. Ссылка с тремя параметрами в URL
+            </a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="http://kubsu.ru/?id=123">8. Ссылка с параметром id в URL</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="page.html">9. Относительная ссылка в текущем каталоге</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="about/page.html">10. Относительная ссылка в каталоге about</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="../page.html">11. Относительная ссылка в каталоге уровнем выше</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="../../page.html">12. Относительная ссылка в каталоге двумя уровнями
+              выше</a>
+          </li>
+
+          <li class="link-list__item">
+            <p class="link-list__paragraph">
+              13. В этом абзаце расположена
+              <a class="link-list__link-inline" href="https://kubsu.ru/">контекстная ссылка на КубГУ</a>
+              внутри текста — как и требуется в задании по HTML.
+            </p>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="https://ru.wikipedia.org/wiki/HTML#Браузеры">
+              14. Ссылка на фрагмент стороннего сайта (Википедия)
+            </a>
+          </li>
+
+          <li class="link-list__item" id="map">
+            <p class="link-list__paragraph">15. Ссылки из областей картинки (HTML-тег map):</p>
+            <img class="link-list__map" src="images/kubsumap.webp"
+                alt="Карта изображения с активными областями" usemap="#kubsumap" width="300" height="120">
+            <map name="kubsumap">
+                <area shape="rect" coords="0,0,150,120" href="http://kubsu.ru/" alt="Прямоугольная область — КубГУ">
+                <area shape="circle" coords="225,60,50" href="https://kubsu.ru/" alt="Круглая область — КубГУ">
+            </map>
+        </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="">16. Ссылка с пустым href</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link">17. Ссылка без href</a>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="http://kubsu.ru/" rel="nofollow">
+              18. Ссылка с rel="nofollow" — запрет перехода поисковикам
+            </a>
+          </li>
+
+          <li class="link-list__item">
+            <a href="http://kubsu.ru/" rel="nofollow noindex">
+              19. Ссылка, запрещённая для индексации
+            </a>
+          </li>
+
+          <li class="link-list__item">
+            <p class="link-list__paragraph">20. Нумерованный список ссылок с атрибутом title:</p>
+            <ol class="link-list__ordered">
+              <li><a class="link-list__link" href="http://kubsu.ru/" title="Главная страница КубГУ">КубГУ — главная</a>
+              </li>
+              <li><a class="link-list__link" href="https://kubsu.ru/" title="КубГУ через https">КубГУ — защищённый
+                  протокол</a></li>
+              <li><a class="link-list__link" href="http://kubsu.ru/?id=1" title="Ссылка с ID">КубГУ — с параметром
+                  id</a></li>
+            </ol>
+          </li>
+
+          <li class="link-list__item">
+            <a class="link-list__link" href="ftp://user:password@ftp.example.com/file.txt">
+              21. Ссылка на файл на FTP с авторизацией
+            </a>
+          </li>
+
+        </ul>
+      </section>
+
+      <section class="block" id="table" aria-labelledby="table-title">
+        <h2 class="block__title" id="table-title">Успеваемость студентов</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="visually-hidden">Оценки студентов по веб-разработке</caption>
+            <thead>
+              <tr>
+                <th scope="col">Студент</th>
+                <th scope="col">Курс</th>
+                <th scope="col">Оценка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Иванов И. И.</td>
+                <td>Веб-разработка</td>
+                <td class="data-table__price">5</td>
+              </tr>
+              <tr>
+                <td>Петров П. П.</td>
+                <td>Веб-разработка</td>
+                <td class="data-table__price">4</td>
+              </tr>
+              <tr>
+                <td>Сидорова А. В.</td>
+                <td>Веб-разработка</td>
+                <td class="data-table__price">5</td>
+              </tr>
+              <tr>
+                <td>Кузнецов Д. С.</td>
+                <td>Веб-разработка</td>
+                <td class="data-table__price">3</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </footer>
+      </section>
 
+      <section class="block" id="form" aria-labelledby="form-title">
+        <h2 class="block__title" id="form-title">Анкета студента</h2>
+
+        <form class="form" id="client-form" action="#" method="post" novalidate>
+
+          <div class="form__field">
+            <label class="form__label" for="fio">ФИО</label>
+            <input class="form__input" type="text" id="fio" name="fio" placeholder="Иванов Иван Иванович" required>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="phone">Телефон</label>
+            <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="email">E-mail</label>
+            <input class="form__input" type="email" id="email" name="email" placeholder="example@mail.ru" required>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="birthdate">Дата рождения</label>
+            <input class="form__input" type="date" id="birthdate" name="birthdate" value="2000-01-01">
+          </div>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Пол</legend>
+            <div class="form__radio-group">
+              <label class="form__radio-label">
+                <input class="form__radio" type="radio" name="gender" value="male" checked>
+                <span>Мужской</span>
+              </label>
+              <label class="form__radio-label">
+                <input class="form__radio" type="radio" name="gender" value="female">
+                <span>Женский</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form__field">
+            <label class="form__label" for="languages">Любимый язык программирования (можно несколько)</label>
+            <select class="form__input form__input--select" id="languages" name="languages" multiple size="11">
+              <option value="pascal">Pascal</option>
+              <option value="c">C</option>
+              <option value="cpp">C++</option>
+              <option value="javascript" selected>JavaScript</option>
+              <option value="php">PHP</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="haskell">Haskell</option>
+              <option value="clojure">Clojure</option>
+              <option value="prolog">Prolog</option>
+              <option value="scala">Scala</option>
+            </select>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="bio">Биография</label>
+            <textarea class="form__input form__input--textarea" id="bio" name="bio" rows="4"
+              placeholder="Расскажите о себе…">Студент КубГУ, изучаю веб-разработку.</textarea>
+          </div>
+
+          <div class="form__field form__field--checkbox">
+            <label class="form__checkbox-label">
+              <input class="form__checkbox" type="checkbox" name="contract" value="yes" checked>
+              <span>С контрактом ознакомлен(а)</span>
+            </label>
+          </div>
+
+         <div class="form__actions">
+            <button class="form__submit" type="submit">Сохранить</button>
+            <button class="form__cancel" type="button" id="cancel-btn" hidden>Отменить отправку</button>
+          </div>
+
+         <div class="form__status" id="form-status" role="status" aria-live="polite"></div>
+
+        </form>
+      </section>
+
+    </main>
+
+    <aside class="sidebar" aria-label="Полезные ссылки и контакты">
+      <section class="block block--promo">
+        <h2 class="block__title">Полезные материалы</h2>
+        <ul class="promo-list">
+          <li class="promo-list__item">
+            <span class="promo-list__badge">HTML</span>
+            <span class="promo-list__text">Спецификация WHATWG</span>
+          </li>
+          <li class="promo-list__item">
+            <span class="promo-list__badge">CSS</span>
+            <span class="promo-list__text">MDN Web Docs</span>
+          </li>
+          <li class="promo-list__item">
+            <span class="promo-list__badge">JS</span>
+            <span class="promo-list__text">Learn JavaScript</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="block sidebar__contacts">
+        <h2 class="block__title">Контакты</h2>
+        <p class="sidebar__text">
+          <span class="sidebar__text-label">Учебное заведение</span>
+          <strong>КубГУ</strong>
+        </p>
+        <p class="sidebar__text">
+          <span class="sidebar__text-label">Сайт</span>
+          <a class="sidebar__link" href="https://kubsu.ru/">kubsu.ru</a>
+        </p>
+      </section>
+    </aside>
+
+  </div>
+
+  <footer class="page-footer">
+    <div class="container page-footer__inner">
+      <div class="page-footer__col">
+        <span class="page-footer__brand">Учебный проект</span>
+        <p class="page-footer__text">Веб-разработка и веб-сервисы, КубГУ.</p>
+      </div>
+      <div class="page-footer__col">
+        <span class="page-footer__heading">О работе</span>
+        <p class="page-footer__text">© Завалей Ирина, 2026</p>
+        <p class="page-footer__text">Задание по HTML5</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
