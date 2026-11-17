@@ -76,7 +76,44 @@ class FormSender {
             },
             signal: this.controller.signal
         });
+    }async _send(formData) {
+    this.controller = new AbortController();
+    
+    this.cancelReason = null; 
+
+    this.timerId = setTimeout(() => {
+        this.cancelReason = 'timeout';
+        this.cancel();
+    }, this.timeout);
+
+    return fetch(this.endpoint, {
+        signal: this.controller.signal
+    });
+}
+
+} catch (err) {
+    if (err.name === 'AbortError') {
+        if (this.cancelReason === 'timeout') {
+            this._setStatus('error', 'Превышено время ожидания. Сервер не отвечает.');
+        } else {
+            this._setStatus('error', 'Вы отменили отправку анкеты.');
+        }
+    } else {
+        this._setStatus('error', `Не удалось отправить: ${err.message}`);
     }
+    console.error('[FormSender]', err);
+} finally {
+    this._stopSending();
+}
+
+cancel() {
+    if (this.controller) {
+        if (!this.cancelReason) this.cancelReason = 'user';
+        
+        this.controller.abort();
+        this.controller = null; 
+    }
+}
 
     async _parseResponse(response) {
         const contentType = response.headers.get('content-type') || '';
@@ -127,6 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         endpoint: 'https://formcarry.com/s/dWWOXCGqIbB',
         statusEl: document.getElementById('form-status'),
         cancelBtn: document.getElementById('cancel-btn'),
-        timeout: 15000
+        timeout: 30000
     });
 });
