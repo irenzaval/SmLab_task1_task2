@@ -75,6 +75,7 @@ class FormSender {
             this.cancelReason = 'timeout';
             this.cancel();
         }, this.timeout);
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         return fetch(this.endpoint, {
             method: 'POST',
