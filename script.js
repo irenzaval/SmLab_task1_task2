@@ -1,8 +1,6 @@
-
 class FormSender {
-
-constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
-          if (!form || !endpoint || !statusEl) {
+    constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
+        if (!form || !endpoint || !statusEl) {
             throw new Error('FormSender: обязательные параметры — form, endpoint, statusEl');
         }
 
@@ -15,6 +13,7 @@ constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
         this.controller = null;
         this.timerId = null;
         this.isSending = false;
+        this.cancelReason = null;
 
         this._bindEvents();
     }
@@ -54,9 +53,13 @@ constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
             this.form.reset();
         } catch (err) {
             if (err.name === 'AbortError') {
-                this._setStatus('error', ' Отправка отменена или превышено время ожидания.');
+                if (this.cancelReason === 'timeout') {
+                    this._setStatus('error', 'Превышено время ожидания. Сервер не отвечает.');
+                } else {
+                    this._setStatus('error', 'Вы отменили отправку анкеты.');
+                }
             } else {
-                this._setStatus('error', ` Не удалось отправить: ${err.message}`);
+                this._setStatus('error', `Не удалось отправить: ${err.message}`);
             }
             console.error('[FormSender]', err);
         } finally {
@@ -66,7 +69,12 @@ constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
 
     async _send(formData) {
         this.controller = new AbortController();
-        this.timerId = setTimeout(() => this.cancel(), this.timeout);
+        this.cancelReason = null;
+
+        this.timerId = setTimeout(() => {
+            this.cancelReason = 'timeout';
+            this.cancel();
+        }, this.timeout);
 
         return fetch(this.endpoint, {
             method: 'POST',
@@ -76,44 +84,7 @@ constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
             },
             signal: this.controller.signal
         });
-    }async _send(formData) {
-    this.controller = new AbortController();
-    
-    this.cancelReason = null; 
-
-    this.timerId = setTimeout(() => {
-        this.cancelReason = 'timeout';
-        this.cancel();
-    }, this.timeout);
-
-    return fetch(this.endpoint, {
-        signal: this.controller.signal
-    });
-}
-
-} catch (err) {
-    if (err.name === 'AbortError') {
-        if (this.cancelReason === 'timeout') {
-            this._setStatus('error', 'Превышено время ожидания. Сервер не отвечает.');
-        } else {
-            this._setStatus('error', 'Вы отменили отправку анкеты.');
-        }
-    } else {
-        this._setStatus('error', `Не удалось отправить: ${err.message}`);
     }
-    console.error('[FormSender]', err);
-} finally {
-    this._stopSending();
-}
-
-cancel() {
-    if (this.controller) {
-        if (!this.cancelReason) this.cancelReason = 'user';
-        
-        this.controller.abort();
-        this.controller = null; 
-    }
-}
 
     async _parseResponse(response) {
         const contentType = response.headers.get('content-type') || '';
@@ -127,7 +98,11 @@ cancel() {
 
     cancel() {
         if (this.controller) {
+            if (!this.cancelReason) {
+                this.cancelReason = 'user';
+            }
             this.controller.abort();
+            this.controller = null;
         }
     }
 
@@ -160,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!form) return;
 
     new FormSender({
-    form,
-    endpoint: 'https://formcarry.com/s/dWWOXCGqIbB',
-    statusEl: document.getElementById('form-status'),
-    cancelBtn: document.getElementById('cancel-btn'),
-    timeout: 60000
-});
+        form,
+        endpoint: 'https://formcarry.com/s/dWWOXCGqIbB',
+        statusEl: document.getElementById('form-status'),
+        cancelBtn: document.getElementById('cancel-btn'),
+        timeout: 70000
+    });
 });
