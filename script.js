@@ -1,8 +1,8 @@
 
 class FormSender {
 
-    constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
-        if (!form || !endpoint || !statusEl) {
+constructor({ form, endpoint, statusEl, cancelBtn = null, timeout = 15000 }) {
+          if (!form || !endpoint || !statusEl) {
             throw new Error('FormSender: обязательные параметры — form, endpoint, statusEl');
         }
 
@@ -160,10 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!form) return;
 
     new FormSender({
-        form,
-        endpoint: 'https://formcarry.com/s/dWWOXCGqIbB',
-        statusEl: document.getElementById('form-status'),
-        cancelBtn: document.getElementById('cancel-btn'),
-        timeout: 30000
-    });
+    form,
+    endpoint: 'https://formcarry.com/s/dWWOXCGqIbB',
+    statusEl: document.getElementById('form-status'),
+    cancelBtn: document.getElementById('cancel-btn'),
+    timeout: 60000
+});
 });
